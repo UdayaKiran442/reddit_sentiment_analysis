@@ -1,0 +1,7 @@
+ARTIFACT_DIR = "Artifacts"
+DATA_INGESTION_DIR = "data_ingestion"
+DATA_INGESTION_FEATURE_STORE_DIR = "feature_store"
+DATA_INGESTION_INGESTED_DIR = "ingested"
+TRAIN_FILE_NAME = "train.csv"
+TEST_FILE_NAME = "test.csv"
+FEATURE_STORE_FILE_NAME = "raw.csv"
