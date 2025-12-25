@@ -5,3 +5,4 @@ if __name__ == "__main__":
     training_pipeline_entity = TrainingPipelineEntity()
     data_ingestion_entity = DataIngestionEntity(training_pipeline_entity=training_pipeline_entity)
     data_ingestion = DataIngestion(data_ingestion_entity)
+    data_ingestion_artifact = data_ingestion.initiate_data_ingestion()
