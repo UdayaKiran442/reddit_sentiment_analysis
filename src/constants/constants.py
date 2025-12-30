@@ -10,3 +10,6 @@ DATA_TRANSFORMATION_DIR = "data_transformation"
 DATA_TRANSFORMATION_TEST_FILE_PATH = "test.npy"
 DATA_TRANSFORMATION_TRAIN_FILE_PATH = "train.npy"
 DATA_TRANSFORMATION_OBJECT_FILE_PATH = "transformation_object.pkl"
+
+MODEL_TRAINER_DIR = "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_FILE_PATH = "trained_model.pkl"
