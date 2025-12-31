@@ -15,7 +15,7 @@ stages:
     params:
       params.yaml:
         data_ingestion.random_state: 42
-        data_ingestion.test_size: 0.2
+        data_ingestion.test_size: 0.3
     outs:
     - path: Artifacts/data_ingestion/feature_store/raw.csv
       hash: md5
@@ -23,24 +23,24 @@ stages:
       size: 6888931
     - path: Artifacts/data_ingestion/ingested/test.csv
       hash: md5
-      md5: de980789d5ab05902aeff475cef9ec87
-      size: 1372600
+      md5: a955a42253405b6def76595da7137307
+      size: 2085667
     - path: Artifacts/data_ingestion/ingested/train.csv
       hash: md5
-      md5: eaac2a273c537030aec90c1f8834e014
-      size: 5516354
+      md5: b22c58d84a211db326447a9e58be040d
+      size: 4803287
   data_transformation:
     cmd:
     - python3 -m src.components.data_transformation
     deps:
     - path: Artifacts/data_ingestion/ingested/test.csv
       hash: md5
-      md5: de980789d5ab05902aeff475cef9ec87
-      size: 1372600
+      md5: a955a42253405b6def76595da7137307
+      size: 2085667
     - path: Artifacts/data_ingestion/ingested/train.csv
       hash: md5
-      md5: eaac2a273c537030aec90c1f8834e014
-      size: 5516354
+      md5: b22c58d84a211db326447a9e58be040d
+      size: 4803287
     - path: src/components/data_transformation.py
       hash: md5
       md5: ad8f0d17982b7246fc6ed3dbeb13e5c6
@@ -52,14 +52,14 @@ stages:
     outs:
     - path: Artifacts/data_transformation/transformed_data/test.npy
       hash: md5
-      md5: 84ba56661d81a81bfb0edf7fc4e28b1e
-      size: 2588304288
+      md5: 33382eb59aeae3cbc704eedeb39549d9
+      size: 3597421192
     - path: Artifacts/data_transformation/transformed_data/train.npy
       hash: md5
-      md5: 8781fdbb8998a1bc242dc2e1f26f2a24
-      size: 10307721968
+      md5: 6c9d13aa7bf80cc7e1090f0a6622b0a4
+      size: 8369755368
     - path: 
         Artifacts/data_transformation/transformed_object/transformation_object.pkl
       hash: md5
-      md5: fc82cc96f168a691f509ca3846e8b7ef
-      size: 938030
+      md5: 40b7eda1ef844273830a9e48bffbb3ed
+      size: 867624
