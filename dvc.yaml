@@ -1,0 +1,13 @@
+stages:
+  data_ingestion:
+    cmd: 
+      - python3 -m src.components.data_ingestion
+    deps:
+      - src/components/data_ingestion.py
+    params:
+      - data_ingestion.test_size
+      - data_ingestion.random_state
+    outs:
+      - Artifacts/data_ingestion/feature_store/raw.csv
+      - Artifacts/data_ingestion/ingested/train.csv
+      - Artifacts/data_ingestion/ingested/test.csv

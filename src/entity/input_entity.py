@@ -4,10 +4,8 @@ from datetime import datetime
 from src.constants.constants import ARTIFACT_DIR, DATA_INGESTION_DIR, DATA_INGESTION_FEATURE_STORE_DIR, DATA_INGESTION_INGESTED_DIR, TRAIN_FILE_NAME, TEST_FILE_NAME, FEATURE_STORE_FILE_NAME, DATA_TRANSFORMATION_DIR, DATA_TRANSFORMATION_TEST_FILE_PATH, DATA_TRANSFORMATION_TRAIN_FILE_PATH, DATA_TRANSFORMATION_OBJECT_FILE_PATH, MODEL_TRAINER_DIR, MODEL_TRAINER_TRAINED_MODEL_FILE_PATH
 
 class TrainingPipelineEntity:
-    def __init__(self, timestamp = datetime.now()):
-        timestamp=timestamp.strftime("%m_%d_%Y_%H_%M_%S")
-        self.artifact_name = ARTIFACT_DIR
-        self.artifact_dir = os.path.join(self.artifact_name, timestamp)
+    def __init__(self):
+        self.artifact_dir = ARTIFACT_DIR
 
 class DataIngestionEntity:
     def __init__(self, training_pipeline_entity: TrainingPipelineEntity):

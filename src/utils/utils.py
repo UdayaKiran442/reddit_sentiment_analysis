@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import certifi, ssl, urllib.request
+import certifi, ssl, urllib.request, yaml
 import nltk, os, sys, pickle
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -82,5 +82,13 @@ def load_numpy_array_data(file_path: str) -> np.array:
     try:
         with open(file_path, "rb") as file_obj:
             return np.load(file_obj)
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+    
+def read_yaml_file(file_path: str):
+    try:
+        with open(file=file_path, mode='r') as file:
+            config_data = yaml.safe_load(file)
+            return config_data
     except Exception as e:
         raise NetworkSecurityException(e, sys)
