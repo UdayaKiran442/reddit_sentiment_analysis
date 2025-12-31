@@ -19,7 +19,9 @@ stages:
     deps:
       - src/components/data_transformation.py
       - src/entity/input_entity/data_transformation_entity.py
+      - Artifacts/data_ingestion/ingested/train.csv
+      - Artifacts/data_ingestion/ingested/test.csv
     outs:
-      - Artifacts/data_transformation/train.npy
-      - Artifacts/data_transformation/test.npy
-      - Artifacts/data_transformation/transformation_object.pkl
+      - Artifacts/data_transformation/transformed_data/train.npy
+      - Artifacts/data_transformation/transformed_data/test.npy
+      - Artifacts/data_transformation/transformed_object/transformation_object.pkl

@@ -33,24 +33,33 @@ stages:
     cmd:
     - python3 -m src.components.data_transformation
     deps:
+    - path: Artifacts/data_ingestion/ingested/test.csv
+      hash: md5
+      md5: de980789d5ab05902aeff475cef9ec87
+      size: 1372600
+    - path: Artifacts/data_ingestion/ingested/train.csv
+      hash: md5
+      md5: eaac2a273c537030aec90c1f8834e014
+      size: 5516354
     - path: src/components/data_transformation.py
       hash: md5
-      md5: e9140ab84b4f1b50073d58b528fecf9f
-      size: 4488
+      md5: ad8f0d17982b7246fc6ed3dbeb13e5c6
+      size: 4938
     - path: src/entity/input_entity/data_transformation_entity.py
       hash: md5
-      md5: d597e0fbf8c9eba454684f47e704fea4
-      size: 845
+      md5: f9c39af65fc4749121d1db9357282d5d
+      size: 907
     outs:
-    - path: Artifacts/data_transformation/test.npy
+    - path: Artifacts/data_transformation/transformed_data/test.npy
       hash: md5
       md5: 84ba56661d81a81bfb0edf7fc4e28b1e
       size: 2588304288
-    - path: Artifacts/data_transformation/train.npy
+    - path: Artifacts/data_transformation/transformed_data/train.npy
       hash: md5
       md5: 8781fdbb8998a1bc242dc2e1f26f2a24
       size: 10307721968
-    - path: Artifacts/data_transformation/transformation_object.pkl
+    - path: 
+        Artifacts/data_transformation/transformed_object/transformation_object.pkl
       hash: md5
-      md5: 51f1c7113a081a79d5185a23ab410fae
+      md5: fc82cc96f168a691f509ca3846e8b7ef
       size: 938030
