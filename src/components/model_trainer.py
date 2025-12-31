@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 
 from src.entity.artifact_entity import DataTransformationArtifactEntity, ModelTrainerArtifactEntity
 
-from src.entity.input_entity import ModelTrainerEntity
+from src.entity.input_entity.model_trainer_entity import ModelTrainerEntity
 
 from src.logging.logger import logging
 

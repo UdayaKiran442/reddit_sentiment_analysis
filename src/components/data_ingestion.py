@@ -3,9 +3,8 @@ from sklearn.model_selection import train_test_split
 
 from src.utils.utils import read_csv, read_yaml_file
 
-from src.entity.input_entity import TrainingPipelineEntity, DataIngestionEntity
-
-from src.entity.input_entity import DataIngestionEntity
+from src.entity import TrainingPipelineEntity
+from src.entity.input_entity.data_ingestion_entity import DataIngestionEntity
 from src.entity.artifact_entity import DataIngestionArtifactEntity
 
 from src.constants.constants import PARAMS_FILE_PATH

@@ -4,6 +4,7 @@ stages:
       - python3 -m src.components.data_ingestion
     deps:
       - src/components/data_ingestion.py
+      - src/entity/input_entity/data_ingestion_entity.py
     params:
       - data_ingestion.test_size
       - data_ingestion.random_state
@@ -11,3 +12,14 @@ stages:
       - Artifacts/data_ingestion/feature_store/raw.csv
       - Artifacts/data_ingestion/ingested/train.csv
       - Artifacts/data_ingestion/ingested/test.csv
+  
+  data_transformation:
+    cmd:
+      - python3 -m src.components.data_transformation
+    deps:
+      - src/components/data_transformation.py
+      - src/entity/input_entity/data_transformation_entity.py
+    outs:
+      - Artifacts/data_transformation/train.npy
+      - Artifacts/data_transformation/test.npy
+      - Artifacts/data_transformation/transformation_object.pkl

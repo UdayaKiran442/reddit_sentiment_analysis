@@ -2,7 +2,8 @@ import sys
 import pandas as pd
 import numpy as np
 
-from src.entity.input_entity import DataTransformationEntity
+from src.entity import TrainingPipelineEntity
+from src.entity.input_entity.data_transformation_entity import DataTransformationEntity
 from src.entity.artifact_entity import DataIngestionArtifactEntity, DataTransformationArtifactEntity
 
 from src.utils.utils import clean_df, process_comment, get_transformation_object, save_numpy_array_data, save_object
@@ -61,3 +62,18 @@ class DataTransformation:
         except Exception as e:
             logging.error(f"Error occurred in initiate_data_transformation method: {e}")
             raise NetworkSecurityException(e, sys)
+        
+
+if __name__ == "__main__":
+    training_pipeline_entity = TrainingPipelineEntity()
+    # Assuming DataIngestionEntity and DataIngestion are defined and work as expected
+    from src.entity.input_entity.data_ingestion_entity import DataIngestionEntity
+    from src.components.data_ingestion import DataIngestion
+
+    data_ingestion_entity = DataIngestionEntity(training_pipeline_entity)
+    data_ingestion = DataIngestion(data_ingestion_entity)
+    data_ingestion_artifact = data_ingestion.initiate_data_ingestion()
+
+    data_transformation_entity = DataTransformationEntity(training_pipeline_entity)
+    data_transformation = DataTransformation(data_transformation_entity, data_ingestion_artifact)
+    data_transformation_artifact = data_transformation.initiate_data_transformation()

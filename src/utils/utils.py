@@ -11,12 +11,12 @@ from src.logging.logger import logging
 
 from src.exception_handling.exception import NetworkSecurityException
 
-nltk.download('punkt')
-nltk.download('punkt_tab')
-nltk.download('wordnet')    
-nltk.download('omw-1.4') 
-nltk.download('averaged_perceptron_tagger_eng')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('punkt_tab')
+# nltk.download('wordnet')    
+# nltk.download('omw-1.4') 
+# nltk.download('averaged_perceptron_tagger_eng')
+# nltk.download('stopwords')
 
 lemetiser = WordNetLemmatizer()
 
