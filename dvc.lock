@@ -63,3 +63,33 @@ stages:
       hash: md5
       md5: 40b7eda1ef844273830a9e48bffbb3ed
       size: 867624
+  model_trainer:
+    cmd:
+    - python3 -m src.components.model_trainer
+    deps:
+    - path: Artifacts/data_transformation/transformed_data/test.npy
+      hash: md5
+      md5: 33382eb59aeae3cbc704eedeb39549d9
+      size: 3597421192
+    - path: Artifacts/data_transformation/transformed_data/train.npy
+      hash: md5
+      md5: 6c9d13aa7bf80cc7e1090f0a6622b0a4
+      size: 8369755368
+    - path: 
+        Artifacts/data_transformation/transformed_object/transformation_object.pkl
+      hash: md5
+      md5: 40b7eda1ef844273830a9e48bffbb3ed
+      size: 867624
+    - path: src/components/model_trainer.py
+      hash: md5
+      md5: 7905f4611c56395a8c7327387c0e7956
+      size: 3756
+    - path: src/entity/input_entity/model_trainer_entity.py
+      hash: md5
+      md5: c8f3e940ea37739bb74118995331612e
+      size: 480
+    outs:
+    - path: Artifacts/model_trainer/model/trained_model.pkl
+      hash: md5
+      md5: e0955c81a31cbbf9a925613cc7d4318b
+      size: 174818836

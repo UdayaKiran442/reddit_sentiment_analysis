@@ -25,3 +25,15 @@ stages:
       - Artifacts/data_transformation/transformed_data/train.npy
       - Artifacts/data_transformation/transformed_data/test.npy
       - Artifacts/data_transformation/transformed_object/transformation_object.pkl
+
+  model_trainer:
+    cmd:
+      - python3 -m src.components.model_trainer
+    deps:
+      - src/components/model_trainer.py
+      - src/entity/input_entity/model_trainer_entity.py
+      - Artifacts/data_transformation/transformed_data/train.npy
+      - Artifacts/data_transformation/transformed_data/test.npy
+      - Artifacts/data_transformation/transformed_object/transformation_object.pkl
+    outs:
+      - Artifacts/model_trainer/model/trained_model.pkl
