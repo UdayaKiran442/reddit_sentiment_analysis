@@ -1,0 +1,4 @@
+[ 2026-01-01 10:52:41,716 ] 48 root - INFO - Entered the initiate_model_trainer method of ModelTrainer class
+[ 2026-01-01 10:52:43,719 ] 24 root - INFO - Training the model
+[ 2026-01-01 10:56:22,514 ] 27 root - INFO - Model training completed
+[ 2026-01-01 10:56:31,471 ] 39 root - INFO - Trained model saved successfully

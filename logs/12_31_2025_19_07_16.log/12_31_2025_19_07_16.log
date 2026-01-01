@@ -1,0 +1,8 @@
+[ 2025-12-31 19:07:16,289 ] 23 root - INFO - Starting data transformation process
+[ 2025-12-31 19:07:16,326 ] 31 root - INFO - Entered the clean_df function
+[ 2025-12-31 19:07:16,343 ] 36 root - INFO - Exiting the clean_df function
+[ 2025-12-31 19:07:16,343 ] 31 root - INFO - Entered the clean_df function
+[ 2025-12-31 19:07:16,349 ] 36 root - INFO - Exiting the clean_df function
+[ 2025-12-31 19:07:16,350 ] 38 root - INFO - Applying process_comment function in data transformation
+[ 2025-12-31 19:07:46,511 ] 43 root - INFO - Getting transformation object and applying fit_transform and transform methods
+[ 2025-12-31 19:07:46,799 ] 50 root - INFO - Combining input features and target feature into single numpy array

@@ -1,0 +1,39 @@
+stages:
+  data_ingestion:
+    cmd: 
+      - python3 -m src.components.data_ingestion
+    deps:
+      - src/components/data_ingestion.py
+      - src/entity/input_entity/data_ingestion_entity.py
+    params:
+      - data_ingestion.test_size
+      - data_ingestion.random_state
+    outs:
+      - Artifacts/data_ingestion/feature_store/raw.csv
+      - Artifacts/data_ingestion/ingested/train.csv
+      - Artifacts/data_ingestion/ingested/test.csv
+  
+  data_transformation:
+    cmd:
+      - python3 -m src.components.data_transformation
+    deps:
+      - src/components/data_transformation.py
+      - src/entity/input_entity/data_transformation_entity.py
+      - Artifacts/data_ingestion/ingested/train.csv
+      - Artifacts/data_ingestion/ingested/test.csv
+    outs:
+      - Artifacts/data_transformation/transformed_data/train.npy
+      - Artifacts/data_transformation/transformed_data/test.npy
+      - Artifacts/data_transformation/transformed_object/transformation_object.pkl
+
+  model_trainer:
+    cmd:
+      - python3 -m src.components.model_trainer
+    deps:
+      - src/components/model_trainer.py
+      - src/entity/input_entity/model_trainer_entity.py
+      - Artifacts/data_transformation/transformed_data/train.npy
+      - Artifacts/data_transformation/transformed_data/test.npy
+      - Artifacts/data_transformation/transformed_object/transformation_object.pkl
+    outs:
+      - Artifacts/model_trainer/model/trained_model.pkl

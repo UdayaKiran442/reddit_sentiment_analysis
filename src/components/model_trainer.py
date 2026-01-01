@@ -3,9 +3,12 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
+from src.entity import TrainingPipelineEntity
+
 from src.entity.artifact_entity import DataTransformationArtifactEntity, ModelTrainerArtifactEntity
 
-from src.entity.input_entity import ModelTrainerEntity
+from src.entity.input_entity.model_trainer_entity import ModelTrainerEntity
+from src.entity.input_entity.data_transformation_entity import DataTransformationEntity
 
 from src.logging.logger import logging
 
@@ -60,4 +63,22 @@ class ModelTrainer:
 
 
 
-        
+if __name__ == "__main__":
+    training_pipeline_entity = TrainingPipelineEntity()
+    data_transformation_entity = DataTransformationEntity(training_pipeline_entity)
+
+    data_transformation_artifact_entity = DataTransformationArtifactEntity(
+        data_transformation_train_file_path=data_transformation_entity.data_transformation_train_file_path,
+        data_transformation_test_file_path=data_transformation_entity.data_transformation_test_file_path,
+        data_transformation_object_file_path=data_transformation_entity.data_transformation_object_file_path
+    )
+
+    model_trainer_entity = ModelTrainerEntity(training_pipeline_entity)
+    model_trainer = ModelTrainer(
+        data_transformation_artifact_entity=data_transformation_artifact_entity,
+        model_trainer_entity=model_trainer_entity
+    )
+
+    model_trainer_artifact = model_trainer.initiate_model_trainer()
+    print(f"Model training completed!")
+    print(f"Trained model file path: {model_trainer_artifact.trained_model_file_path}")
