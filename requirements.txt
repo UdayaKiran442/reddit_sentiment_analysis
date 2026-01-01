@@ -7,3 +7,5 @@ setuptools
 certifi
 nltk
 pyyaml
+fastapi
+uvicorn
