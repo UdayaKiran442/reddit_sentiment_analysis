@@ -92,3 +92,10 @@ def read_yaml_file(file_path: str):
             return config_data
     except Exception as e:
         raise NetworkSecurityException(e, sys)
+    
+def load_object(file_path: str):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return pickle.load(file_obj)
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
