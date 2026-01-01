@@ -1,7 +1,10 @@
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
-from src.entity.input_entity import DataIngestionEntity, TrainingPipelineEntity, DataTransformationEntity, ModelTrainerEntity
+from src.entity.input_entity.data_ingestion_entity import DataIngestionEntity
+from src.entity.input_entity.data_transformation_entity import DataTransformationEntity
+from src.entity.input_entity.model_trainer_entity import ModelTrainerEntity
+from src.entity import TrainingPipelineEntity
 
 if __name__ == "__main__":
     training_pipeline_entity = TrainingPipelineEntity()
